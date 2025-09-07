@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CPU Scheduling Calculator</title>
+    <link rel="stylesheet" href="styles.css">
+    <script src="backend.js" defer></script>
+</head>
+<body>
+    <h1>CPU Scheduling Calculator</h1>
+    <p>Without Completion Time</p>
+    
+    <div class="input-section">
+        <div>
+            <label for="ArrivalTime">Arrival Time:</label>
+            <input type="number" id="ArrivalTime">
+        </div>
+        <div>
+            <label for="BurstTime">Burst Time:</label>
+            <style>
+            input[type="number"]::-webkit-inner-spin-button,
+            input[type="number"]::-webkit-outer-spin-button {
+                -webkit-appearance: none;
+                margin: 0;
+            }
+            input[type="number"] {
+                -moz-appearance: textfield;
+            }
+            </style>
+            <input type="number" id="BurstTime">
+        </div>
+    </div>
+
+    <div id="process-table"></div>
+
+    <div class="algorithm-section">
+        <h3>Select Algorithm:</h3>
+        <select id="algorithm">
+            <option value="fcfs">First Come First Serve (FCFS)</option>
+            <option value="sjf">Shortest Job First (SJF)</option>
+            <option value="rr">Round Robin</option>
+            <option value="priority">Priority Scheduling</option>
+        </select>
+        <div id="quantum-input" style="display: none;">
+            <label for="quantum">Time Quantum:</label>
+            <input type="number" id="quantum" min="1" value="1">
+        </div>
+        <button onclick="calculate()">Calculate</button>
+    </div>
+
+    <div id="results"></div>
+
+    <div id="gantt-chart"></div>
+    <div>
+        <h3>Created by : RusselMunoz</h3>
+        <p1>Check my works at <a href = "https://github.com/RusselMunoz"> github!</href></p1>
+    </div>
+
+</body>
+</html>

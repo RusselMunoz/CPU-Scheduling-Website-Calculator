@@ -10,14 +10,14 @@
 <body>
     <h1>CPU Scheduling Calculator</h1>
     <p>Without Completion Time</p>
-    
+   
     <div class="input-section">
         <div>
-            <label for="ArrivalTime">Arrival Time:</label>
-            <input type="number" id="ArrivalTime">
+            <label for="ArrivalTime">Arrival Time (space-separated):</label>
+            <input type="text" id="ArrivalTime" placeholder="e.g., 0 1 2 3">
         </div>
         <div>
-            <label for="BurstTime">Burst Time:</label>
+            <label for="BurstTime">Burst Time (space-separated):</label>
             <style>
             input[type="number"]::-webkit-inner-spin-button,
             input[type="number"]::-webkit-outer-spin-button {
@@ -28,19 +28,19 @@
                 -moz-appearance: textfield;
             }
             </style>
-            <input type="number" id="BurstTime">
+            <input type="text" id="BurstTime" placeholder="e.g., 5 3 8 6">
         </div>
     </div>
-
     <div id="process-table"></div>
-
     <div class="algorithm-section">
         <h3>Select Algorithm:</h3>
         <select id="algorithm">
             <option value="fcfs">First Come First Serve (FCFS)</option>
             <option value="sjf">Shortest Job First (SJF)</option>
+            <option value="srtf">Shortest Remaining Time First (SRTF)</option>
             <option value="rr">Round Robin</option>
             <option value="priority">Priority Scheduling</option>
+            <option value="ps-rr">Priority Scheduling w/ Round Robin</option>
         </select>
         <div id="quantum-input" style="display: none;">
             <label for="quantum">Time Quantum:</label>
@@ -48,14 +48,12 @@
         </div>
         <button onclick="calculate()">Calculate</button>
     </div>
-
     <div id="results"></div>
-
+    <div id="output"></div>
     <div id="gantt-chart"></div>
     <div>
         <h3>Created by : RusselMunoz</h3>
-        <p1>Check my works at <a href = "https://github.com/RusselMunoz"> github!</href></p1>
+        <p1>Check my works at <a href="https://github.com/RusselMunoz">github!</a></p1>
     </div>
-
 </body>
 </html>

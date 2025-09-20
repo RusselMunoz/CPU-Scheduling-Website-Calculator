@@ -1,31 +1,222 @@
 body {
-    font-family: Arial, sans-serif;
-    max-width: 800px;
+    font-family: 'Arial', sans-serif;
+    max-width: 900px;
     margin: 0 auto;
     padding: 20px;
+    background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
+    min-height: 100vh;
+}
+
+h1 {
+    text-align: center;
+    color: #2c3e50;
+    margin-bottom: 10px;
+    font-size: 2.5em;
+}
+
+p {
+    text-align: center;
+    color: #7f8c8d;
+    margin-bottom: 30px;
 }
 
 .input-section {
-    margin-bottom: 20px;
+    margin-bottom: 30px;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 20px;
+    background: white;
+    padding: 25px;
+    border-radius: 15px;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.1);
 }
+
+.input-section div {
+    display: flex;
+    flex-direction: column;
+}
+
+label {
+    margin-bottom: 8px;
+    font-weight: bold;
+    color: #34495e;
+    font-size: 14px;
+}
+
+input[type="text"], input[type="number"], select {
+    padding: 12px;
+    border: 2px solid #ecf0f1;
+    border-radius: 8px;
+    font-size: 16px;
+    transition: all 0.3s ease;
+}
+
+input[type="text"]:focus, input[type="number"]:focus, select:focus {
+    outline: none;
+    border-color: #3498db;
+    box-shadow: 0 0 10px rgba(52, 152, 219, 0.2);
+}
+
+.algorithm-section {
+    background: white;
+    padding: 25px;
+    border-radius: 15px;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+    margin-bottom: 30px;
+}
+
+.algorithm-section h3 {
+    margin-top: 0;
+    color: #2c3e50;
+    margin-bottom: 15px;
+}
+
+select {
+    margin-bottom: 15px;
+    width: 100%;
+}
+
+#quantum-input {
+    margin-top: 15px;
+}
+
+#quantum-input label {
+    margin-bottom: 5px;
+}
+
+button {
+    width: 100%;
+    padding: 15px 20px;
+    border-radius: 10px;
+    background: linear-gradient(135deg, #3498db, #2980b9);
+    color: white;
+    border: none;
+    cursor: pointer;
+    font-size: 16px;
+    font-weight: bold;
+    margin-top: 15px;
+    transition: all 0.3s ease;
+}
+
+button:hover {
+    background: linear-gradient(135deg, #2980b9, #1f5f99);
+    transform: translateY(-2px);
+    box-shadow: 0 5px 15px rgba(52, 152, 219, 0.3);
+}
+
+#output {
+    background: white;
+    padding: 25px;
+    border-radius: 15px;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+    margin-top: 30px;
+    min-height: 50px;
+    color: #2c3e50;
+    line-height: 1.6;
+}
+
+#output h3 {
+    color: #27ae60;
+    margin-top: 0;
+    border-bottom: 2px solid #ecf0f1;
+    padding-bottom: 10px;
+}
+
+#output p {
+    text-align: left;
+    margin: 15px 0;
+    color: #2c3e50;
+}
+
+#output strong {
+    color: #2980b9;
+}
+
+#results, #gantt-chart {
+    background: white;
+    padding: 25px;
+    border-radius: 15px;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+    margin-top: 20px;
+}
+
 table {
     width: 100%;
     border-collapse: collapse;
     margin-bottom: 20px;
+    background: white;
+    border-radius: 10px;
+    overflow: hidden;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.1);
 }
+
 th, td {
-    border: 1px solid #ddd;
-    padding: 8px;
-    text-align: left;
+    border: 1px solid #ecf0f1;
+    padding: 12px;
+    text-align: center;
 }
-button {
-    padding: 10px 20px;
-    border-radius: 5px;
-    background-color: #4CAF50;
+
+th {
+    background: linear-gradient(135deg, #3498db, #2980b9);
     color: white;
-    border: none;
-    cursor: pointer;
+    font-weight: bold;
 }
-button:hover {
-    background-color: #45a049;
+
+td {
+    background: #fafafa;
+}
+
+/* Enhanced styling for better visual appeal */
+.input-section::before {
+    content: "📝 Input Data";
+    display: block;
+    font-weight: bold;
+    color: #2c3e50;
+    margin-bottom: 15px;
+    font-size: 18px;
+}
+
+.algorithm-section::before {
+    content: "⚙️ Algorithm Selection";
+    display: block;
+    font-weight: bold;
+    color: #2c3e50;
+    margin-bottom: 15px;
+    font-size: 18px;
+}
+
+#output:not(:empty)::before {
+    content: "📊 Results";
+    display: block;
+    font-weight: bold;
+    color: #27ae60;
+    margin-bottom: 15px;
+    font-size: 18px;
+    border-bottom: 2px solid #ecf0f1;
+    padding-bottom: 10px;
+}
+
+/* Footer styling */
+div:last-child {
+    text-align: center;
+    margin-top: 40px;
+    padding: 20px;
+    background: white;
+    border-radius: 15px;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+}
+
+div:last-child h3 {
+    color: #2c3e50;
+    margin-bottom: 10px;
+}
+
+div:last-child a {
+    color: #3498db;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+div:last-child a:hover {
+    text-decoration: underline;
 }
